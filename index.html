@@ -111,46 +111,57 @@
 
 		<table class="tg" id="posiciones">
 			<tr>
+				<th class="tg-031e">Posición</th>
 				<th class="tg-031e">Equipo</th>
 				<th class="tg-031e">Puntos</th>
 			</tr>
 			<tr>
+				<td class="tg-vn4c">1</td>
 				<td class="tg-vn4c">Brasil</td>
 				<td class="tg-vn4c">24</td>
 			</tr>
 			<tr>
+				<td class="tg-031e">2</td>
 				<td class="tg-031e">Uruguay</td>
 				<td class="tg-031e">23</td>
 			</tr>
 			<tr>
+				<td class="tg-vn4c">3</td>
 				<td class="tg-vn4c">Colombia</td>
 				<td class="tg-vn4c">18</td>
 			</tr>
 			<tr>
+				<td class="tg-031e">4</td>
 				<td class="tg-031e">Ecuador</td>
 				<td class="tg-031e">17</td>
 			</tr>
 			<tr>
+				<td class="tg-vn4c">5</td>
 				<td class="tg-vn4c">Chile</td>
 				<td class="tg-vn4c">17</td>
 			</tr>
 			<tr>
+				<td class="tg-yw4l">6</td>
 				<td class="tg-yw4l">Argentina</td>
 				<td class="tg-yw4l">16</td>
 			</tr>
 			<tr>
+				<td class="tg-6k2t">7</td>
 				<td class="tg-6k2t">Paraguay</td>
 				<td class="tg-6k2t">15</td>
 			</tr>
 			<tr>
+				<td class="tg-yw4l">8</td>
 				<td class="tg-yw4l">Perú</td>
 				<td class="tg-yw4l">14</td>
 			</tr>
 			<tr>
+				<td class="tg-6k2t">9</td>
 				<td class="tg-6k2t">Venezuela</td>
 				<td class="tg-6k2t">5</td>
 			</tr>
 			<tr>
+				<td class="tg-yw4l">10</td>
 				<td class="tg-yw4l">Bolivia</td>
 				<td class="tg-yw4l">4</td>
 			</tr>
@@ -281,7 +292,7 @@
 					
 					$('#posiciones').children().remove();
 					
-					l = '<tr><th class="tg-031e">Equipo</th><th class="tg-031e">Puntos</th></tr>';
+					l = '<tr><th class="tg-031e">Posición</th><th class="tg-031e">Equipo</th><th class="tg-031e">Puntos</th></tr>';
 					$('#posiciones').append(l);
 					
 					for(i=0;i<p.length;i++) {
@@ -291,8 +302,9 @@
 						if(i%2 == 0) {
 							cls = 'tg-031e';
 						}
+						var ii = i+1;
 
-						l = '<tr><td class="'+cls+'">'+p[i][0]+'</td><td class="'+cls+'">'+p[i][1]+'</td></tr>';
+						l = '<tr><td class="'+cls+'">'+ii+'</td><td class="'+cls+'">'+p[i][0]+'</td><td class="'+cls+'">'+p[i][1]+'</td></tr>';
 						$('#posiciones').append(l);
 
 					}
