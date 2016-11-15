@@ -1,0 +1,157 @@
+<html>
+	<head>
+		<title> Calculadora de resultados de las Eliminatorias Rusia 2018</title>
+	</head>
+	<body>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+		<style type="text/css">
+			.tg {
+				border-collapse: collapse;
+				border-spacing: 0;
+				border-color: #999;
+				border: none;
+				width: 450px;
+			}
+			.tg td {
+				font-family: Arial, sans-serif;
+				font-size: 14px;
+				padding: 10px 5px;
+				border-style: solid;
+				border-width: 0px;
+				overflow: hidden;
+				word-break: normal;
+				border-color: #999;
+				color: #444;
+				background-color: #F7FDFA;
+			}
+			.tg th {
+				font-family: Arial, sans-serif;
+				font-size: 14px;
+				font-weight: normal;
+				padding: 10px 5px;
+				border-style: solid;
+				border-width: 0px;
+				overflow: hidden;
+				word-break: normal;
+				border-color: #999;
+				color: #fff;
+				background-color: #26ADE4;
+			}
+			.tg .tg-vn4c {
+				background-color: #D2E4FC
+			}
+			.tg .tg-yw4l {
+				vertical-align: top
+			}
+			.tg .tg-6k2t {
+				background-color: #D2E4FC;
+				vertical-align: top
+			}
+		</style>
+
+		<table class="tg">
+			<tr>
+				<th colspan="4" class="tg-031e">Martes 15 de Noviembre</th>
+			</tr>
+			<tr>
+				<td class="tg-vn4c">17:00</td>
+				<td class="tg-6k2t">Bolivia</td>
+				<td class="tg-vn4c">
+				<select id="p1">
+					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Bolivia</option><option value="e">Empatan</option><option value="v">Gana Paraguay</option>
+				</select></td>
+				<td class="tg-vn4c">Paraguay</td>
+			</tr>
+			<tr>
+				<td class="tg-031e">18:00</td>
+				<td class="tg-yw4l">Ecuador</td>
+				<td class="tg-031e">
+				<select id="p2">
+					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Ecuador</option><option value="e">Empatan</option><option value="v">Gana Venezuela</option>
+				</select></td>
+				<td class="tg-031e">Venezuela</td>
+			</tr>
+			<tr>
+				<td class="tg-6k2t">20:30</td>
+				<td class="tg-6k2t">Argentina</td>
+				<td class="tg-vn4c">
+				<select id="p3">
+					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Argentina</option><option value="e">Empatan</option><option value="v">Gana Colombia</option>
+				</select></td>
+				<td class="tg-6k2t">Colombia</td>
+			</tr>
+			<tr>
+				<td class="tg-yw4l">20:30</td>
+				<td class="tg-yw4l">Chile</td>
+				<td class="tg-yw4l">
+				<select id="p4">
+					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Chile</option><option value="e">Empatan</option><option value="v">Gana Uruguay</option>
+				</select></td>
+				<td class="tg-yw4l">Uruguay</td>
+			</tr>
+			<tr>
+				<td class="tg-6k2t">23:15</td>
+				<td class="tg-6k2t">Perú</td>
+				<td class="tg-6k2t">
+				<select id="p4">
+					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Perú</option><option value="e">Empatan</option><option value="v">Gana Brasil</option>
+				</select></td>
+				<td class="tg-6k2t">Brasil</td>
+			</tr>
+		</table>
+		
+		<div style="margin-top:20px;margin-bottom:20px">
+			<button id="btn_simular">Simular resultados</button>
+		</div>
+
+		<hr>
+
+		<table class="tg" id="posiciones">
+			<tr>
+				<th class="tg-031e">Equipo</th>
+				<th class="tg-031e">Puntos</th>
+			</tr>
+			<tr>
+				<td class="tg-vn4c">Brasil</td>
+				<td class="tg-vn4c">24</td>
+			</tr>
+			<tr>
+				<td class="tg-031e">Uruguay</td>
+				<td class="tg-031e">23</td>
+			</tr>
+			<tr>
+				<td class="tg-vn4c">Colombia</td>
+				<td class="tg-vn4c">18</td>
+			</tr>
+			<tr>
+				<td class="tg-031e">Ecuador</td>
+				<td class="tg-031e">17</td>
+			</tr>
+			<tr>
+				<td class="tg-vn4c">Chile</td>
+				<td class="tg-vn4c">17</td>
+			</tr>
+			<tr>
+				<td class="tg-yw4l">Argentina</td>
+				<td class="tg-yw4l">16</td>
+			</tr>
+			<tr>
+				<td class="tg-6k2t">Paraguay</td>
+				<td class="tg-6k2t">15</td>
+			</tr>
+			<tr>
+				<td class="tg-yw4l">Perú</td>
+				<td class="tg-yw4l">14</td>
+			</tr>
+			<tr>
+				<td class="tg-6k2t">Venezuela</td>
+				<td class="tg-6k2t">5</td>
+			</tr>
+			<tr>
+				<td class="tg-yw4l">Bolivia</td>
+				<td class="tg-yw4l">4</td>
+			</tr>
+		</table>
+	</body>
+</html>
