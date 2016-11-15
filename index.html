@@ -94,7 +94,7 @@
 				<td class="tg-6k2t">23:15</td>
 				<td class="tg-6k2t">Perú</td>
 				<td class="tg-6k2t">
-				<select data-t1="peru" data-t2="brasil" id="p4" class="resultados">
+				<select data-t1="peru" data-t2="brasil" id="p5" class="resultados">
 					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Perú</option><option value="e">Empatan</option><option value="v">Gana Brasil</option>
 				</select></td>
 				<td class="tg-6k2t">Brasil</td>
@@ -223,15 +223,16 @@
 									cl = cl + 3;
 								}
 								if ($(obj).val() == 'v') {
-									py = py + 3;
+									uy = uy + 3;
 								}
 								if ($(obj).val() == 'e') {
 									cl = cl + 1;
-									py = py + 1;
+									uy = uy + 1;
 								}
 							}
 
 							if ($(obj).attr('id') == 'p5') {
+																
 								if ($(obj).val() == 'l') {
 									pe = pe + 3;
 								}
@@ -247,20 +248,57 @@
 
 						}
 
-						console.log(br);
-						console.log(uy);
-						console.log(co);
-						console.log(ec);
-						console.log(cl);
-						console.log(ar);
-						console.log(py);
-						console.log(pe);
-						console.log(ve);
-						console.log(bo);
 												
 					});
 
+
+						var posiciones = [
+						  ['Brasil', br],
+						  ['Uruguay', uy],
+						  ['Colombia', co],
+						  ['Ecuador', ec],
+						  ['Chile', cl],
+						  ['Argentina', ar],
+						  ['Paraguay', py],
+						  ['Perú', pe],
+						  ['Venezuela', ve],
+						  ['Bolivia', bo],
+						];	
+						
+						posiciones.sort((function(index){
+						    return function(a, b){
+						        return (a[index] === b[index] ? 0 : (a[index] > b[index] ? -1 : 1));
+						    };
+						})(1));
+
+						refreshPosiciones(posiciones);
+
 				});
+				
+				function refreshPosiciones(p) {
+					
+					l = '';
+					
+					$('#posiciones').children().remove();
+					
+					l = '<tr><th class="tg-031e">Equipo</th><th class="tg-031e">Puntos</th></tr>';
+					$('#posiciones').append(l);
+					
+					for(i=0;i<p.length;i++) {
+						
+						var cls = 'tg-vn4c';
+						
+						if(i%2 == 0) {
+							cls = 'tg-031e';
+						}
+
+						l = '<tr><td class="'+cls+'">'+p[i][0]+'</td><td class="'+cls+'">'+p[i][1]+'</td></tr>';
+						$('#posiciones').append(l);
+
+					}
+					
+					
+				}
 			});
 		</script>
 	</body>
