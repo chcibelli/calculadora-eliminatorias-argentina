@@ -58,7 +58,7 @@
 				<td class="tg-vn4c">17:00</td>
 				<td class="tg-6k2t">Bolivia</td>
 				<td class="tg-vn4c">
-				<select id="p1">
+				<select data-t1="bolivia" data-t2="paraguay" id="p1" class="resultados">
 					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Bolivia</option><option value="e">Empatan</option><option value="v">Gana Paraguay</option>
 				</select></td>
 				<td class="tg-vn4c">Paraguay</td>
@@ -67,7 +67,7 @@
 				<td class="tg-031e">18:00</td>
 				<td class="tg-yw4l">Ecuador</td>
 				<td class="tg-031e">
-				<select id="p2">
+				<select data-t1="ecuador" data-t2="venezuela" id="p2" class="resultados">
 					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Ecuador</option><option value="e">Empatan</option><option value="v">Gana Venezuela</option>
 				</select></td>
 				<td class="tg-031e">Venezuela</td>
@@ -76,7 +76,7 @@
 				<td class="tg-6k2t">20:30</td>
 				<td class="tg-6k2t">Argentina</td>
 				<td class="tg-vn4c">
-				<select id="p3">
+				<select data-t1="argentina" data-t2="colombia" id="p3" class="resultados">
 					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Argentina</option><option value="e">Empatan</option><option value="v">Gana Colombia</option>
 				</select></td>
 				<td class="tg-6k2t">Colombia</td>
@@ -85,7 +85,7 @@
 				<td class="tg-yw4l">20:30</td>
 				<td class="tg-yw4l">Chile</td>
 				<td class="tg-yw4l">
-				<select id="p4">
+				<select data-t1="chile" data-t2="uruguay"  id="p4" class="resultados">
 					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Chile</option><option value="e">Empatan</option><option value="v">Gana Uruguay</option>
 				</select></td>
 				<td class="tg-yw4l">Uruguay</td>
@@ -94,15 +94,17 @@
 				<td class="tg-6k2t">23:15</td>
 				<td class="tg-6k2t">Perú</td>
 				<td class="tg-6k2t">
-				<select id="p4">
+				<select data-t1="peru" data-t2="brasil" id="p4" class="resultados">
 					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Perú</option><option value="e">Empatan</option><option value="v">Gana Brasil</option>
 				</select></td>
 				<td class="tg-6k2t">Brasil</td>
 			</tr>
 		</table>
-		
+
 		<div style="margin-top:20px;margin-bottom:20px">
-			<button id="btn_simular">Simular resultados</button>
+			<button id="btn_simular">
+				Simular resultados
+			</button>
 		</div>
 
 		<hr>
@@ -153,5 +155,113 @@
 				<td class="tg-yw4l">4</td>
 			</tr>
 		</table>
+
+		<script>
+			$(document).ready(function() {
+
+				var br = 24;
+				var uy = 23;
+				var co = 18;
+				var ec = 17;
+				var cl = 17;
+				var ar = 16;
+				var py = 15;
+				var pe = 14;
+				var ve = 5;
+				var bo = 4;
+
+				$("#btn_simular").click(function() {
+
+					$('.resultados').each(function(i, obj) {
+
+						if ($(obj).val() == 0) {
+							alert('Por favor completa el resultado de todos los partidos');
+							return false;
+						} else {
+
+							if ($(obj).attr('id') == 'p1') {
+								if ($(obj).val() == 'l') {
+									bo = bo + 3;
+								}
+								if ($(obj).val() == 'v') {
+									py = py + 3;
+								}
+								if ($(obj).val() == 'e') {
+									bo = bo + 1;
+									py = py + 1;
+								}
+							}
+
+							if ($(obj).attr('id') == 'p2') {
+								if ($(obj).val() == 'l') {
+									ec = ec + 3;
+								}
+								if ($(obj).val() == 'v') {
+									ve = ve + 3;
+								}
+								if ($(obj).val() == 'e') {
+									ec = ec + 1;
+									ve = ve + 1;
+								}
+							}
+
+							if ($(obj).attr('id') == 'p3') {
+								if ($(obj).val() == 'l') {
+									ar = ar + 3;
+								}
+								if ($(obj).val() == 'v') {
+									co = co + 3;
+								}
+								if ($(obj).val() == 'e') {
+									ar = ar + 1;
+									co = co + 1;
+								}
+							}
+
+							if ($(obj).attr('id') == 'p4') {
+								if ($(obj).val() == 'l') {
+									cl = cl + 3;
+								}
+								if ($(obj).val() == 'v') {
+									py = py + 3;
+								}
+								if ($(obj).val() == 'e') {
+									cl = cl + 1;
+									py = py + 1;
+								}
+							}
+
+							if ($(obj).attr('id') == 'p5') {
+								if ($(obj).val() == 'l') {
+									pe = pe + 3;
+								}
+								if ($(obj).val() == 'v') {
+									br = br + 3;
+								}
+								if ($(obj).val() == 'e') {
+									pe = pe + 1;
+									br = br + 1;
+								}
+							}
+
+
+						}
+
+						console.log(br);
+						console.log(uy);
+						console.log(co);
+						console.log(ec);
+						console.log(cl);
+						console.log(ar);
+						console.log(py);
+						console.log(pe);
+						console.log(ve);
+						console.log(bo);
+												
+					});
+
+				});
+			});
+		</script>
 	</body>
 </html>
