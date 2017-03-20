@@ -67,12 +67,15 @@
 		</table>
 
 		<div style="margin-top:20px;margin-bottom:20px">
+
 			<button id="btn_simular">
 				Simular resultados
-			</button>
+			</button>			
+
+			<button style="width:225px" id="btn_random">
+				Autocompletar predicciones 
+			</button>			
 		</div>
-
-
 
 		<table class="tg" id="posiciones">
 			<tr>
@@ -140,6 +143,19 @@
 		<script>
 			$(document).ready(function() {
 
+				$("#btn_random").click(function() {
+					
+					var rrs = ['v','l','e'];
+									
+					$('.resultados').each(function(i, obj) {
+						$(obj).val(rrs[Math.floor(Math.random()*rrs.length)]);
+					});
+
+					$('#btn_simular').trigger('click');
+					
+					
+				});
+
 				$("#btn_simular").click(function() {
 
 				var br = 27;
@@ -171,6 +187,8 @@
 									bo = bo + 1;
 									co = co + 1;
 								}
+								
+								var p1 = $(obj).val();
 							}
 
 							if ($(obj).attr('id') == 'p2') {
@@ -184,6 +202,8 @@
 									py = py + 1;
 									ec = ec + 1;
 								}
+								
+								var p2 = $(obj).val();								
 							}
 
 							if ($(obj).attr('id') == 'p3') {
@@ -197,6 +217,8 @@
 									uy = uy + 1;
 									br = br + 1;
 								}
+
+								var p3 = $(obj).val();								
 							}
 
 							if ($(obj).attr('id') == 'p4') {
@@ -210,6 +232,8 @@
 									cl = cl + 1;
 									ar = ar + 1;
 								}
+
+								var p4 = $(obj).val();																
 							}
 
 							if ($(obj).attr('id') == 'p5') {
@@ -224,6 +248,8 @@
 									pe = pe + 1;
 									br = br + 1;
 								}
+								
+								var p5 = $(obj).val();								
 							}
 
 
