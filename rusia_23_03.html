@@ -1,0 +1,312 @@
+
+<html>
+	<head>
+		<title> Calculadora de resultados de las Eliminatorias Rusia 2018</title>
+	</head>
+	<body>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Roboto:300,400,500,700,900|Open+Sans:400,300,600,700|Oswald:400,300,700|Roboto+Condensed:400,300,700|Roboto+Slab:400,100,300,700|Montserrat:400,700" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+		.container-calc{width:95%;height:832px;background:#f1f1f1;padding:8px;position:relative}.logo{position:absolute;bottom:13px;right:14px}.logo img{width:85px}tr{border-bottom:1px solid #ccc;width:70%}.tg{border-collapse:collapse;border-spacing:0;border-color:#999;border:none;width:100%}.tg td{font-family:"Roboto",Arial,helvetica,clean,sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0;overflow:hidden;word-break:normal;border-color:#999;color:#444;text-align:center;vertical-align:top}.tg th{font-family:"Roboto",Arial,helvetica,clean,sans-serif;font-size:14px;font-weight:700;padding:10px 5px;border-style:solid;border-width:0;overflow:hidden;word-break:normal;border-color:#999;color:#000;background-color:#EADF28}.tg .tg-vn4c{vertical-align:top}.tg .tg-yw4l{vertical-align:top}.tg .tg-6k2t{vertical-align:top}select{padding:6px;border-radius:8px;border-color:#737373;width:100%}button{border-radius:9px;padding:8px;background:#FFF87B;text-align:center;border:0;width:173px;font-weight:700;text-transform:uppercase;font-size:12px;line-height:21px;cursor:pointer;box-shadow:2px 2px 5px #E2E2E2}button:hover{background:#EADF28}
+		</style>
+<div class="container-calc">
+		<table class="tg">
+			<tr>
+				<th colspan="4" class="tg-031e">Jueves 23 de Marzo</th>
+			</tr>
+			<tr>
+				<td class="tg-vn4c">17:30</td>
+				<td class="tg-6k2t">Colombia</td>
+
+				<td class="tg-vn4c">Bolivia</td>
+				<td class="tg-vn4c">
+				<select data-t1="colombia" data-t2="bolivia" id="p1" class="resultados">
+					<option value="0">Seleccionar resultado</option><option value="l">Gana Colombia</option><option value="e">Empatan</option><option value="v">Gana Bolivia</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tg-031e">20:00</td>
+				<td class="tg-yw4l">Paraguay</td>
+
+				<td class="tg-031e">Ecuador</td>
+				<td class="tg-031e">
+				<select data-t1="paraguay" data-t2="ecuador" id="p2" class="resultados">
+					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Paraguay</option><option value="e">Empatan</option><option value="v">Gana Ecuador</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tg-6k2t">20:00</td>
+				<td class="tg-6k2t">Uruguay</td>
+
+				<td class="tg-6k2t">Brasil</td>
+				<td class="tg-vn4c">
+				<select data-t1="uruguay" data-t2="brasil" id="p3" class="resultados">
+					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Uruguay</option><option value="e">Empatan</option><option value="v">Gana Brasil</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tg-yw4l">20:30</td>
+				<td class="tg-yw4l">Argentina</td>
+
+				<td class="tg-yw4l">Chile</td>
+				<td class="tg-yw4l">
+				<select data-t1="argentina" data-t2="chile"  id="p4" class="resultados">
+					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Argentina</option><option value="e">Empatan</option><option value="v">Gana Chile</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td class="tg-6k2t">20:30</td>
+				<td class="tg-6k2t">Venezuela</td>
+
+				<td class="tg-6k2t">Perú</td>
+				<td class="tg-6k2t">
+				<select data-t1="venezuela" data-t2="peru" id="p5" class="resultados">
+					<option value="0" selected="selected">Seleccionar resultado</option><option value="l">Gana Venezuela</option><option value="e">Empatan</option><option value="v">Gana Perú</option>
+				</select></td>
+			</tr>
+		</table>
+
+		<div style="margin-top:20px;margin-bottom:20px">
+
+			<button id="btn_simular">
+				Simular resultados
+			</button>			
+
+			<button style="width:225px;float:right" id="btn_random">
+				Autocompletar predicción 
+			</button>			
+		</div>
+
+		<table class="tg" id="posiciones">
+			<tr>
+				<th class="tg-031e">Posición</th>
+				<th class="tg-031e">Equipo</th>
+				<th class="tg-031e">Puntos</th>
+			</tr>
+			<tr>
+				<td class="tg-vn4c">1</td>
+				<td class="tg-vn4c">Brasil</td>
+				<td class="tg-vn4c">27</td>
+			</tr>
+			<tr>
+				<td class="tg-031e">2</td>
+				<td class="tg-031e">Uruguay</td>
+				<td class="tg-031e">23</td>
+			</tr>
+			<tr>
+				<td class="tg-vn4c">3</td>
+				<td class="tg-vn4c">Ecuador</td>
+				<td class="tg-vn4c">20</td>
+			</tr>
+			<tr>
+				<td class="tg-031e">4</td>
+				<td class="tg-031e">Chile</td>
+				<td class="tg-031e">20</td>
+			</tr>
+			<tr>
+				<td class="tg-vn4c">5</td>
+				<td class="tg-vn4c">Argentina</td>
+				<td class="tg-vn4c">19</td>
+			</tr>
+			<tr>
+				<td class="tg-yw4l">6</td>
+				<td class="tg-yw4l">Colombia</td>
+				<td class="tg-yw4l">18</td>
+			</tr>
+			<tr>
+				<td class="tg-6k2t">7</td>
+				<td class="tg-6k2t">Paraguay</td>
+				<td class="tg-6k2t">15</td>
+			</tr>
+			<tr>
+				<td class="tg-yw4l">8</td>
+				<td class="tg-yw4l">Perú</td>
+				<td class="tg-yw4l">14</td>
+			</tr>
+			<tr>
+				<td class="tg-6k2t">9</td>
+				<td class="tg-6k2t">Bolivia</td>
+				<td class="tg-6k2t">7</td>
+			</tr>
+			<tr>
+				<td class="tg-yw4l">10</td>
+				<td class="tg-yw4l">Venezuela</td>
+				<td class="tg-yw4l">5</td>
+			</tr>
+			<tr>
+				<div class="logo">	<img src="http://www.clarin.com/static/CLAClarinV3/images/logo.png"></td>
+
+			</div>
+
+		</table>
+</div>
+		<script>
+			$(document).ready(function() {
+
+				$("#btn_random").click(function() {
+					
+					var rrs = ['v','l','e'];
+									
+					$('.resultados').each(function(i, obj) {
+						$(obj).val(rrs[Math.floor(Math.random()*rrs.length)]);
+					});
+
+					$('#btn_simular').trigger('click');
+					
+					
+				});
+
+				$("#btn_simular").click(function() {
+
+				var br = 27;
+				var uy = 23;
+				var co = 18;
+				var ec = 20;
+				var cl = 20;
+				var ar = 19;
+				var py = 15;
+				var pe = 14;
+				var ve = 5;
+				var bo = 7;
+
+					$('.resultados').each(function(i, obj) {
+
+						if ($(obj).val() == 0) {
+							alert('Por favor completa el resultado de todos los partidos');
+							return false;
+						} else {
+
+							if ($(obj).attr('id') == 'p1') {
+								if ($(obj).val() == 'l') {
+									co = co + 3;
+								}
+								if ($(obj).val() == 'v') {
+									bo = bo + 3;
+								}
+								if ($(obj).val() == 'e') {
+									bo = bo + 1;
+									co = co + 1;
+								}
+								
+								var p1 = $(obj).val();
+							}
+
+							if ($(obj).attr('id') == 'p2') {
+								if ($(obj).val() == 'l') {
+									py = py + 3;
+								}
+								if ($(obj).val() == 'v') {
+									ec = ec + 3;
+								}
+								if ($(obj).val() == 'e') {
+									py = py + 1;
+									ec = ec + 1;
+								}
+								
+								var p2 = $(obj).val();								
+							}
+
+							if ($(obj).attr('id') == 'p3') {
+								if ($(obj).val() == 'l') {
+									uy = uy + 3;
+								}
+								if ($(obj).val() == 'v') {
+									br = br + 3;
+								}
+								if ($(obj).val() == 'e') {
+									uy = uy + 1;
+									br = br + 1;
+								}
+
+								var p3 = $(obj).val();								
+							}
+
+							if ($(obj).attr('id') == 'p4') {
+								if ($(obj).val() == 'l') {
+									ar = ar + 3;
+								}
+								if ($(obj).val() == 'v') {
+									cl = cl + 3;
+								}
+								if ($(obj).val() == 'e') {
+									cl = cl + 1;
+									ar = ar + 1;
+								}
+
+								var p4 = $(obj).val();																
+							}
+
+							if ($(obj).attr('id') == 'p5') {
+
+								if ($(obj).val() == 'l') {
+									ve = ve + 3;
+								}
+								if ($(obj).val() == 'v') {
+									pe = pe + 3;
+								}
+								if ($(obj).val() == 'e') {
+									pe = pe + 1;
+									br = br + 1;
+								}
+								
+								var p5 = $(obj).val();								
+							}
+
+
+						}
+
+
+					});
+
+						var posiciones = [
+						  ['Brasil', br],
+						  ['Uruguay', uy],
+						  ['Colombia', co],
+						  ['Ecuador', ec],
+						  ['Chile', cl],
+						  ['Argentina', ar],
+						  ['Paraguay', py],
+						  ['Perú', pe],
+						  ['Venezuela', ve],
+						  ['Bolivia', bo],
+						];
+
+						posiciones.sort((function(index){
+						    return function(a, b){
+						        return (a[index] === b[index] ? 0 : (a[index] > b[index] ? -1 : 1));
+						    };
+						})(1));
+
+						refreshPosiciones(posiciones);
+
+				});
+
+				function refreshPosiciones(p) {
+
+					l = '';
+
+					$('#posiciones').children().remove();
+
+					l = '<tr><th class="tg-031e">Posición</th><th class="tg-031e">Equipo</th><th class="tg-031e">Puntos</th></tr>';
+					$('#posiciones').append(l);
+
+					for(i=0;i<p.length;i++) {
+
+						var cls = 'tg-vn4c';
+
+						if(i%2 == 0) {
+							cls = 'tg-031e';
+						}
+						var ii = i+1;
+
+						l = '<tr><td class="'+cls+'">'+ii+'</td><td class="'+cls+'">'+p[i][0]+'</td><td class="'+cls+'">'+p[i][1]+'</td></tr>';
+						$('#posiciones').append(l);
+
+					}
+
+
+				}
+			});
+		</script>
+	</body>
+</html>
