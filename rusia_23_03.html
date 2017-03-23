@@ -66,15 +66,17 @@
 			</tr>
 		</table>
 
-		<div style="margin-top:20px;margin-bottom:20px">
+		<div style="margin-top:20px;margin-bottom:20px;padding-bottom:30px">
 
-			<button id="btn_simular">
+<!--
+			<button style="width:225px;float:left" id="btn_random">
+				Autocompletar predicción 
+			</button>			
+-->
+			<button id="btn_simular" style="float:right">
 				Simular resultados
 			</button>			
 
-			<button style="width:225px;float:right" id="btn_random">
-				Autocompletar predicción 
-			</button>			
 		</div>
 
 		<table class="tg" id="posiciones">
@@ -207,6 +209,7 @@
 							}
 
 							if ($(obj).attr('id') == 'p3') {
+					
 								if ($(obj).val() == 'l') {
 									uy = uy + 3;
 								}
@@ -246,7 +249,7 @@
 								}
 								if ($(obj).val() == 'e') {
 									pe = pe + 1;
-									br = br + 1;
+									ve = ve + 1;
 								}
 								
 								var p5 = $(obj).val();								
